@@ -1,8 +1,11 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 import { Header, Image, Table } from 'semantic-ui-react'
 
 
+
 function Show() {
+    const state = useSelector(state => state.tasks)
     return (
         <Table basic='very' celled collapsing>
     <Table.Header>
@@ -12,22 +15,29 @@ function Show() {
       </Table.Row>
     </Table.Header>
 
-    <Table.Body>
-      <Table.Row>
-        <Table.Cell>
-          <Header as='h4' image>
-          
-            <Header.Content>
-              Lena
-              <Header.Subheader>Human Resources</Header.Subheader>
-            </Header.Content>
-          </Header>
-        </Table.Cell>
-        <Table.Cell>22</Table.Cell>
-      </Table.Row>
-     
-     
-    </Table.Body>
+    {
+        state.value.map(ele=>(
+            <Table.Body>
+            <Table.Row>
+              <Table.Cell>
+                <Header as='h4' image>
+                
+                  <Header.Content>
+                    {ele}
+                  
+                  </Header.Content>
+                </Header>
+              </Table.Cell>
+              <Table.Cell>22</Table.Cell>
+            </Table.Row>
+           
+           
+          </Table.Body>
+
+        ))
+    }
+
+   
   </Table>
     )
 }
