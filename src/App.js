@@ -10,7 +10,7 @@ function App() {
   return (
     <Grid divided='vertically' style={{marginTop:"200px"}}>
     <Grid.Row columns={2}>
-      <Grid.Column  style={{marginLeft:"40px"}}>
+      <Grid.Column  >
         <Add/>
        
       </Grid.Column>
