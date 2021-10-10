@@ -1,25 +1,31 @@
 import logo from './logo.svg';
 import './App.css';
+import { Grid, Image } from 'semantic-ui-react'
+import Add from "./components/Add";
+
+import Show from "./components/Show";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Grid divided='vertically' style={{marginTop:"200px"}}>
+    <Grid.Row columns={2}>
+      <Grid.Column  style={{marginLeft:"40px"}}>
+        <Add/>
+       
+      </Grid.Column>
+      <Grid.Column>
+
+      <Show/>
+       
+      </Grid.Column>
+    </Grid.Row>
+
+  
+  </Grid>
+)
+
+  
 }
 
 export default App;
