@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { act } from 'react-dom/test-utils'
 
 const initialState = {
-  value: 0,
+  value: [],
 }
 
 export const taskSlice = createSlice({
@@ -11,12 +12,14 @@ export const taskSlice = createSlice({
 
     addTask:(state,action)=>{
 
+      state.value.push(action.payload);
+
     }
     
   },
 })
 
 // Action creators are generated for each case reducer function
-export const {  } = taskSlice.actions
+export const {  addTask} = taskSlice.actions
 
 export default taskSlice.reducer
